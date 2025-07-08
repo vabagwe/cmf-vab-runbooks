@@ -23,6 +23,18 @@ This section represents the change history of the document. Revisions of the doc
 
 ---
 
+## Contents
+
+- [**Introduction**](#introduction)
+- [**Upgrade for .NET FAQs**](#upgrade-for-net-faqs)
+  - [**What can the tool do ?**](#what-can-the-tool-do-)
+  - [**What can the tool upgrade ?**](#what-can-the-tool-upgrade-)
+  - [**What limitations are there?**](#what-limitations-are-there)
+- [**Prerequisites**](#prerequisites)
+- [**Installation instructions**](#installation-instructions)
+- [**Starting with the Upgrade Process**](#starting-with-the-upgrade-process)
+- [**Visual Guide: How the Agent Fixes Code Errors & Other Issues During Upgrade**](#visual-guide-how-the-agent-fixes-code-errors--other-issues-during-upgrade)
+
 ## Introduction
 
 GitHub Copilot app modernization - upgrade for .NET is a powerful Visual Studio extension that works with you to upgrade projects to newer versions of .NET, upgrade your dependencies, and apply code fixes.
@@ -169,25 +181,64 @@ The following steps and observations pertain to upgrading from **.NET Core 2.1 t
 
 - Refer below images for issues encountered during **Run unit test** task:
   
-  ![Run unit test task 1](./GHCP-Images/upco16.png)
+  ![Run unit test task #1](./GHCP-Images/upco16.png)
 
 - Agent can provide guidance in diagnosing and fixing integration test issues.
 
-  ![Run unit test task 2](./GHCP-Images/upco17.png)
+  ![Run unit test task #2](./GHCP-Images/upco17.png)
 
-  ![Run unit test task 3](./GHCP-Images/upco18.png)
+  ![Run unit test task #3](./GHCP-Images/upco18.png)
 
-  ![Run unit test task 4](./GHCP-Images/upco19.png)
+  ![Run unit test task #4](./GHCP-Images/upco19.png)
 
-  ![Run unit test task 5](./GHCP-Images/upco20.png)
+  ![Run unit test task #5](./GHCP-Images/upco20.png)
 
 - The agent can also execute terminal commands on our behalf, if permitted.
 
-  ![Run unit test task 6](./GHCP-Images/upco21.png)
+  ![Run unit test task #6](./GHCP-Images/upco21.png)
 
-  ![Run unit test task 7](./GHCP-Images/upco22.png)
+  ![Run unit test task #7](./GHCP-Images/upco22.png)
 
 - Once all tasks in the upgrade plan are completed, the agent will notify the user and inquire if any further assistance is needed. The solution can then be built to verify if it compiles successfully..  
 
-  ![Run unit test task 8](./GHCP-Images/upco23.png)
+  ![Run unit test task #8](./GHCP-Images/upco23.png)
+
+## Visual Guide: How the Agent Fixes Code Errors & Other Issues During Upgrade
+
+- The following code issues were encountered during the upgrade from ASP.NET MVC 5 to .NET 8 and were resolved with guidance from the agent.
+
+  ![Code Fix ASP.NET MVC 5](./GHCP-Images/asp06.png)
+
+  ![Code Fix ASP.NET MVC 5](./GHCP-Images/asp07.png)
+
+  ![Code Fix ASP.NET MVC 5](./GHCP-Images/asp08.png)
+
+  ![Code Fix ASP.NET MVC 5](./GHCP-Images/asp09.png)
+
+- The screenshot below shows a prompt given to the agent to address a security vulnerability encountered during the migration from ASP.NET MVC 6 to .NET 8.
   
+  ![Security vulnerability ASP.NET MVC 6](./GHCP-Images/mvc07.png)
+
+- The screenshots below illustrate the agent detecting a missing NuGet package reference and prompting the user to add it.
+
+  ![Missing Reference ASP.NET MVC 6](./GHCP-Images/mvc09.png)
+
+  ![Missing Reference ASP.NET MVC 6](./GHCP-Images/mvc10.png)
+
+- The screenshots below demonstrate using the agent's assistance to fix an issue by attaching the relevant .cs file where the error occurs.
+
+  ![Configuration Error ASP.NET MVC 6](./GHCP-Images/mvc11.png)
+
+  ![Configuration Error ASP.NET MVC 6](./GHCP-Images/mvc12.png)
+
+  ![Configuration Error ASP.NET MVC 6](./GHCP-Images/mvc13.png)
+
+- As shown in the screenshots above, the issue persisted. It was observed that the agent had upgraded the package to the latest version, but the issue was resolved by downgrading the package.
+Steps taken:
+  1. Restored to a checkpoint to undo the changes made while attempting to fix the issue.
+
+  2. Prompted the agent to downgrade the package
+
+  ![Package downgrade ASP.NET MVC 6](./GHCP-Images/mvc14.png)
+
+[*Go to contents*](#contents)
