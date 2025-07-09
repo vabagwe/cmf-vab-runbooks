@@ -27,9 +27,6 @@ This section represents the change history of the document. Revisions of the doc
 
 - [**Introduction**](#introduction)
 - [**Upgrade for .NET FAQs**](#upgrade-for-net-faqs)
-  - [**What can the tool do ?**](#what-can-the-tool-do-)
-  - [**What can the tool upgrade ?**](#what-can-the-tool-upgrade-)
-  - [**What limitations are there?**](#what-limitations-are-there)
 - [**Prerequisites**](#prerequisites)
 - [**Installation instructions**](#installation-instructions)
 - [**Starting with the Upgrade Process**](#starting-with-the-upgrade-process)
@@ -43,43 +40,63 @@ GitHub Copilot app modernization is distributed as a Visual Studio extension, an
 
 ## Upgrade for .NET FAQs
 
-### What can the tool do ?
+### 1. What can the tool do?
 
-The GitHub Copilot app modernization tool for .NET is a Visual Studio extension that assists in upgrading .NET projects to newer versions. It analyzes the project, creates an upgrade plan, runs upgrade tasks in a local Git branch, auto-fixes code issues, tracks progress with access to logs and changes, and learns from the interactive session to improve results.
+- The GitHub Copilot app modernization tool for .NET is a Visual Studio extension that assists in upgrading .NET projects to newer versions. It analyzes the project, creates an upgrade plan, runs upgrade tasks in a local Git branch, auto-fixes code issues, tracks progress with access to logs and changes, and learns from the interactive session to improve results.
 
-### What can the tool upgrade ?
+### 2. What can the tool upgrade?
 
-GitHub Copilot app modernization - upgrade for .NET currently focuses on migrating your projects from one version of
-.NET to another. For example, upgrading from .NET Core 3.1 or .NET 6, to .NET 9. It also upgrades dependencies and fixes errors in the code post-migration. Besides upgrading the target framework, the tool can work with the following types of projects:
+- GitHub Copilot app modernization - upgrade for .NET currently focuses on migrating your projects from one version of
+.NET to another. For example, upgrading from .NET Core 3.1 or .NET 6, to .NET 9.
 
-- Azure Functions.
-- Console apps and class libraries.
-- Web technologies such as:
-- MVC
-- Blazor
-- Razor Pages
-- Web API
-- Desktop technologies such as Windows Forms and Windows Presentation Foundation.
-- Test projects such as MSTest and NUnit.
+### 3. Does the tool assist with upgrading dependencies after migration?
 
-The following upgrade paths are supported:
+- Yes, It also upgrades dependencies and fixes errors in the code post-migration.
 
-- Upgrade projects from .NET Core to .NET.
-- Upgrade projects from older versions of .NET to the latest.
-- Modernize your codebase.
+### 4. Which project types is the tool designed to work with?
 
-```Note
+- Besides upgrading the target framework, the tool can work with the following types of projects:
 
-**GitHub Copilot app modernization supports upgrading projects coded in C#.**
+  - Azure Functions.
+  - Console apps and class libraries.
+  - Web technologies such as:
+  - MVC
+  - Blazor
+  - Razor Pages
+  - Web API
+  - Desktop technologies such as Windows Forms and Windows Presentation Foundation.
+  - Test projects such as MSTest and NUnit.
 
-```
+### 5. What upgrade path the tool can support?
 
-### What limitations are there?
+- The following upgrade paths are supported:
+
+  - Upgrade projects from .NET Core to .NET.
+  - Upgrade projects from older versions of .NET to the latest.
+  - Modernize your codebase.
+
+### 6. Is the tool capable of upgrading projects written in any programming language?
+
+- Currently GitHub Copilot app modernization supports upgrading projects coded in only in **C#**.
+
+### 7. Does the tool support .NET Framework projects?
 
 - It doesn't support .NET Framework projects. (First upgrade the project to .NET with the [Upgrade Assistant Tool](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview)).
+
+### 8. What types of repositories does the tool support?
+
 - Only Git repositories are supported.
+
+### 9. Are the upgrade suggestions provided by the tool guaranteed to follow best practices?
+
 - There's no guarantee that the upgrade suggestions are considered best practices.
+
+### 10. Does the tool retain learnings from previous upgrade sessions or user-provided code corrections?
+
 - The LLM doesn't persist learning from the upgrade. Meaning, code fixes and corrections you provide during the upgrade process don't persist and can't be remembered for future upgrades.
+
+### 11. On which operating systems can the tool run?
+
 - It only runs on Windows.
 
 ## Prerequisites
